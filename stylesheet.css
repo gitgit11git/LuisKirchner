@@ -7,7 +7,7 @@ body {
     background-color: #f3eeec;
     font-family: 'MetaSerifPro-Light';
     src: local('MetaSerifPro-Light'), local('MetaSerifPro-Light'),
-       url('assets/fonts/MetaSerifPro-Light.ttf') format('ttf');
+        url('assets/fonts/MetaSerifPro-Light.ttf') format('ttf');
 }
 
 header {
@@ -16,13 +16,13 @@ header {
     margin: 1.5em 1em 1em 1em;
     font-family: 'MetaSerifPro-Light';
     src: local('MetaSerifPro-Light'), local('MetaSerifPro-Light'),
-       url('assets/fonts/MetaSerifPro-Light.ttf') format('ttf');
+        url('assets/fonts/MetaSerifPro-Light.ttf') format('ttf');
 }
 
 header a {
     text-decoration: none;
     color: black;
-    margin: 10px;
+    margin: 5px;
 }
 
 .hamburger {
@@ -102,6 +102,7 @@ header a {
 .img-container {
     display: flex;
     width: 100%;
+    margin-top: 2em;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -126,6 +127,10 @@ header a {
 .contact a {
     text-decoration: none;
     color: black;
+}
+
+.logo {
+    align-self: center;
 }
 
 .contact p {
@@ -171,18 +176,72 @@ header a {
     text-align: center;
 }
 
-.embed-container div iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 95%;
-    height: 95%;
+.nav-text {
+    font-size: 12px;
 }
 
-.embed-container div {
-    margin-left: 4em;
-    padding: 56.25% 0 0 0;
-    position: relative;
+.mediadiv {
+    text-align: center;
+    width: 100%;
+    padding-top: 5%;
+}
+
+.divcont {
+    place-items: center;
+    width: 100%;
+    padding-top: 5%;
+    display: grid;
+    grid-auto-flow: row;
+    grid-row-gap: 30px;
+}
+
+.iframe-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+}
+
+.frame-one {
+    width: 72vw;
+    height: 72vh;
+}
+
+.frame-two {
+    width: 72vw;
+    height: 96vh;
+}
+
+@media only screen and (max-width: 600px) {
+    .frame-one {
+        /* new styles for the class on mobile devices */
+        width: 90vw;
+        height: 30vh;
+    }
+
+    .frame-two {
+        width: 90vw;
+        height: 90vh;
+    }
+
+    .iframe-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .frame-two {
+        /* new styles for the class on mobile devices */
+        width: 90vw;
+        height: 40vh;
+    }
 }
 
 @media screen and (max-width: 767px) {
