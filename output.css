@@ -558,12 +558,24 @@ video {
   margin-top: 5rem;
 }
 
+.mb-20 {
+  margin-bottom: 5rem;
+}
+
 .grid {
   display: grid;
 }
 
 .h-96 {
   height: 24rem;
+}
+
+.h-1 {
+  height: 0.25rem;
+}
+
+.h-\[32rem\] {
+  height: 32rem;
 }
 
 .w-full {
@@ -864,10 +876,6 @@ header a {
   .lg\:mx-20 {
     margin-left: 5rem;
     margin-right: 5rem;
-  }
-
-  .lg\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
