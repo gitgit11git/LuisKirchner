@@ -215,9 +215,8 @@ header a {
     height: 96vh;
 }
 .frame-3x2 {
-  aspect-ratio: 3 / 2;
-  width: 100%;
-  height: auto;
+width: 72vw;
+    height: 96vh;
 }
 
 @media only screen and (max-width: 600px) {
