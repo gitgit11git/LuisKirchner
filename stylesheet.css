@@ -216,7 +216,7 @@ header a {
 }
 .frame-3x2 {
 width: 72vw;
-    height: 96vh;
+    height: 84vh;
 }
 
 @media only screen and (max-width: 600px) {
