@@ -1,23 +1,28 @@
+/* ---------------- RESET ---------------- */
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* ---------------- FONTS ---------------- */
 @font-face {
     font-family: 'MetaSerifPro-Light';
-    src: local('MetaSerifPro-Light'), local('MetaSerifPro-Light'), url('assets/fonts/MetaSerifPro-Light.ttf') format('truetype');
+    src: local('MetaSerifPro-Light'),
+         url('assets/fonts/MetaSerifPro-Light.ttf') format('truetype');
 }
 
+/* ---------------- BASE ---------------- */
 body {
     background-color: #f3eeec;
     font-family: 'MetaSerifPro-Light';
 }
 
+/* ---------------- HEADER ---------------- */
 header {
     display: flex;
     justify-content: space-between;
     margin: 1.5em 1em 1em 1em;
-    font-family: 'MetaSerifPro-Light';
 }
 
 header a {
@@ -26,35 +31,38 @@ header a {
     margin: 5px;
 }
 
+.logo {
+    align-self: center;
+}
+
+/* ---------------- HAMBURGER ---------------- */
 .hamburger {
     position: relative;
     display: block;
     width: 35px;
     height: 35px;
-    appearance: none;
     background: none;
-    outline: none;
     border: none;
     cursor: pointer;
 }
 
 .hamburger .bar,
-.hamburger:after,
-.hamburger:before {
+.hamburger::before,
+.hamburger::after {
     content: '';
     display: block;
     width: 100%;
     height: 5px;
     background-color: black;
-    margin: 6px 0px;
+    margin: 6px 0;
     transition: 0.4s;
 }
 
-.hamburger.is-active:before {
+.hamburger.is-active::before {
     transform: rotate(-45deg) translate(-8px, 6px);
 }
 
-.hamburger.is-active:after {
+.hamburger.is-active::after {
     transform: rotate(45deg) translate(-9px, -8px);
 }
 
@@ -62,13 +70,13 @@ header a {
     opacity: 0;
 }
 
+/* ---------------- MOBILE NAV ---------------- */
 .mobile-nav {
     position: fixed;
     top: 0;
     left: 100%;
     width: 100%;
     min-height: 100vh;
-    display: block;
     z-index: 98;
     padding-top: 70px;
     margin-top: 60px;
@@ -91,21 +99,48 @@ header a {
     opacity: 0.5;
 }
 
-.embed-container {
-    text-align: center;
-    margin: 2em;
-}
-
-.embed-container iframe {
-    margin-bottom: 2em;
-}
-
-.img-container {
+/* ---------------- VIDEO CONTAINER ---------------- */
+.iframe-container {
     display: flex;
-    width: 100%;
-    margin-top: 2em;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 40px;
+    margin: 60px 0;
+}
+
+/* Gemeinsame Basis für alle Videos */
+.frame-one,
+.frame-two,
+.frame-three {
+    width: 72vw;
+    border: 0;
+}
+
+/* 16:9 */
+.frame-one {
+    aspect-ratio: 16 / 9;
+    height: auto;
+}
+
+/* 4:3 (2880×2160) */
+.frame-two {
+    aspect-ratio: 4 / 3;
+    height: auto;
+}
+
+/* 3:2 (1620×1080) */
+.frame-three {
+    aspect-ratio: 3 / 2;
+    height: auto;
+}
+
+/* ---------------- IMAGE GRID ---------------- */
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2em;
 }
 
 .img-container img {
@@ -120,36 +155,12 @@ header a {
     transition: 0.3s;
 }
 
-.contact {
-    padding-top: 10em;
-    text-align: center;
-}
-
-.contact a {
-    text-decoration: none;
-    color: black;
-}
-
-.logo {
-    align-self: center;
-}
-
-.contact p {
-    font-size: large;
-    padding: 0.5em;
-}
-
-.contact a:hover {
-    opacity: 0.5;
-}
-
+/* ---------------- LIGHTBOX ---------------- */
 #lightbox {
     position: fixed;
+    inset: 0;
     z-index: 1000;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .8);
+    background-color: rgba(0, 0, 0, 0.8);
     display: none;
 }
 
@@ -164,93 +175,59 @@ header a {
     height: auto;
 }
 
+/* ---------------- CONTACT ---------------- */
+.contact {
+    padding-top: 10em;
+    text-align: center;
+}
+
+.contact p {
+    font-size: large;
+    padding: 0.5em;
+}
+
+.contact a {
+    text-decoration: none;
+    color: black;
+}
+
+.contact a:hover {
+    opacity: 0.5;
+}
+
+/* ---------------- IMPRINT ---------------- */
 .imprint {
     margin-top: 3em;
 }
 
-.imprint p {
+.imprint p,
+.imprint h4 {
     text-align: center;
     padding: 0 1em 1em 1em;
 }
 
-.imprint h4 {
-    text-align: center;
-}
-
-.nav-text {
-    font-size: 12px;
-}
-
-.mediadiv {
-    text-align: center;
-    width: 100%;
-    padding-top: 5%;
-}
-
-.divcont {
-    place-items: center;
-    width: 100%;
-    padding-top: 5%;
-    display: grid;
-    grid-auto-flow: row;
-    grid-row-gap: 30px;
-}
-
-.iframe-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-}
-
-.frame-one {
-    width: 72vw;
-    height: 72vh;
-}
-
-.frame-two {
-    width: 72vw;
-    height: 96vh;
-}
-.frame-three {
-width: 72vw;
-    height: 84vh;
-}
-
+/* ---------------- MOBILE ---------------- */
 @media only screen and (max-width: 600px) {
-    .frame-one {
-        /* new styles for the class on mobile devices */
-        width: 90vw;
-        height: 30vh;
-    }
 
-    .frame-two {
+    .frame-one,
+    .frame-two,
+    .frame-three {
         width: 90vw;
-        height: 90vh;
     }
 
     .iframe-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
         gap: 20px;
         margin-top: 40px;
         margin-bottom: 20px;
     }
-}
 
-@media only screen and (max-width: 600px) {
-    .frame-two {
-        /* new styles for the class on mobile devices */
-        width: 90vw;
-        height: 40vh;
+    #lightbox img {
+        width: 400px;
     }
 }
 
+/* ---------------- NAV VISIBILITY ---------------- */
 @media screen and (max-width: 767px) {
-
     header .nav,
     header .social {
         display: none;
@@ -259,33 +236,11 @@ width: 72vw;
     .mobile-nav {
         font-size: 1.5em;
     }
-
-    .embed-container div iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .embed-container div {
-        margin-left: 1.5em;
-        padding: 80.25% 0 0 0;
-        position: relative;
-    }
-
-    #lightbox img {
-        width: 400px;
-        height: auto;
-    }
 }
 
 @media screen and (min-width: 768px) {
-    .mobile-nav {
-        display: none;
-    }
-
+    .mobile-nav,
     .hamburger {
         display: none;
     }
 }
-
-
